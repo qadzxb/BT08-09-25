@@ -1,0 +1,92 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Arial, Helvetica, sans-serif;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  height: 100vh; /* toàn màn hình */
+}
+
+/* Header */
+header {
+  background-color: #008C8C;
+  padding: 30px;
+  text-align: center;
+  font-size: 35px;
+  color: white;
+  position: relative; /* để logo bám trong header */
+}
+
+header .logo {
+  position: absolute;
+  left: 20px;   /* sát trái */
+  top: 50%;
+  transform: translateY(-50%); /* căn giữa dọc */
+}
+
+section {
+  flex: 1;               /* chiếm hết khoảng trống giữa header và footer */
+  display: flex;
+  min-height: 0;         /* tránh tràn */
+}
+
+nav {
+  width: 30%;
+  background: #ccc;
+  padding: 20px;
+  overflow-y: auto;      /* nếu menu dài thì cuộn */
+}
+
+nav ul {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+}
+
+nav ul li {
+  margin: 8px 0;
+}
+
+nav a {
+  text-decoration: none;
+  color: #000;
+}
+
+nav a:hover {
+  color: #008C8C;
+  font-weight: bold;
+}
+
+section iframe {
+  flex: 1;       /* chiếm toàn bộ phần bên phải */
+  border: none;
+  height: 100%;  /* cao bằng section */
+  background: #fff;
+}
+
+footer {
+  background-color: #008C8C;
+  padding: 10px;
+  text-align: center;
+  color: white;
+}
+
+/* Responsive cho màn nhỏ */
+@media (max-width: 600px) {
+  section {
+    flex-direction: column;
+  }
+
+  nav {
+    width: 100%;
+    height: auto;
+  }
+
+  section iframe {
+    width: 100%;
+    height: 400px; /* tạm cho màn nhỏ */
+  }
+}
